@@ -1,5 +1,7 @@
 from flask import Flask, request
 from flask.scaffold import F
+from flask_cors import CORS
+
 import PostProduto as P
 import GetProduto as G
 import DeleteProduto as D
@@ -10,6 +12,7 @@ import Login as L
 #ESTE CÓDIGO MAIN É RESPONSÁVEL APENAS PELAS ROTAS E DIRECIONAMENTOS!
 
 app = Flask(__name__)
+CORS(app)
 
 #DEFINE A ROTA E O MÉTODO
 @app.route("/", methods=['POST'])
@@ -21,7 +24,7 @@ def get_repository():
 
         return dic
     except Exception as e:
-       return str(e)
+        return str(e)
        
 @app.route("/cadastrar", methods=['POST'])
 def post_repository():
@@ -81,4 +84,7 @@ def salvar_user_repository():
 
         return resultado
     except Exception as e:
-       return str(e)
+        return str(e)
+
+if __name__=="__main__":
+    app.run()

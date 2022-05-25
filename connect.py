@@ -5,7 +5,7 @@ from mongoengine.connection import connect
 from mongoengine.document import Document
 
 #Conexão com o banco
-mongoengine.connect(host = "<<Caminho>>")
+mongoengine.connect(host = "mongodb+srv://teste1234:teste1234@testeezops.nsik1.mongodb.net/?retryWrites=true&w=majority")
 
 #DOCUMENTO
 class Produtos(Document):
